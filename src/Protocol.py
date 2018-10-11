@@ -7,11 +7,17 @@ Define your own protocol
 '''
 class Protocol(Packet):
     # Set the name of protcol (Task 2.)
-    name = ''
+    name = 'Student'
 
     # Define the fields in protocol (Task 2.)
     fields_desc = [ 
-        
+        StrField('index', '0'),
+	StrField('dept', 'cs', fmt = 'H', remain = 0),
+	IntEnumField('gender', 2, {
+	    1: 'female',
+	    2: 'male'
+	}),
+	StrField('id', '000000', fmt = 'H', remain = 0),
     ]
 
 '''
